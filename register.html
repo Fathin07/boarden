@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Libraries/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Css/style.css" />
+
+    <title>SANGGRALOKA IHCS</title>
+  </head>
+  <body>
+<style>
+  
+</style>
+    <!-- header  -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav-logo">SANGGRALOKA IHCS</a>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list grid">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Kampus Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Pendaftaran</a>
+            </li>
+          </ul>
+          <i class="fa-solid fa-xmark nav-close" id="nav-close"></i>
+        </div>
+
+        <div class="nav-btns">
+          <!-- theme btn  -->
+          <i class="fa-regular fa-moon change-theme" id="theme-button"></i>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+      
+  <!-- register -->
+  
+  <div class="container">
+    <div class="box">
+      <p style="font-size: 2rem; font-weight: 850; text-align:center; ">Pendaftaran Online</p>
+      <p id='message'></p>
+      <div class="input-group"><input maxlength="25" type="text" placeholder="Nama Lengkap" name="username"onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))' required></div>
+      <div class="input-group"><input maxlength="25" type="email" required placeholder="Email" name="email"></div>
+      <div class="input-group"><input maxlength="25" type="text" required placeholder="No Handphone" name="nohp"></div>
+      <div class="input-group"><input maxlength="25" type="text" required placeholder="Jenis Kelamin" name="jeniskelamin"></div>
+      <div class="input-group"><input maxlength="25" type="text" required placeholder="Alamat" name="alamat"></div>
+      <div class="input-group"><input maxlength="25" type="number" required placeholder="Umur"  name="umur"></div>
+      <div class="input-group"><input maxlength="25" type="text" required placeholder="Pendidikan"  name="pendidikan"></div>
+      <div class="input-group"><button type="submit" id="submit" name="submit" class="btn-sbt">Register</button></div>
+    </form>
+    </form>
+    </div>
+  </div>
+ 
+
+  <script>
+    function submitForm(){
+      var isValid = true;
+      if (document.getElementById('password').value == document.getElementById('cpassword').value) {
+        isValid = true;
+      } else {
+        isValid = false;
+      }
+
+      if (!isValid) {
+          alert("Password tidak cocok");
+          return false;
+      }else{
+        return true;
+
+      }
+
+    }
+   
+    var check = function() {
+      if (document.getElementById('password').value ==
+        document.getElementById('cpassword').value) {
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').innerHTML = 'Password cocok';
+      } else {
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'Password tidak cocok';
+      }
+  }
+  </script>
+  <!-- register -->
+
+   <!-- footer  -->
+   <footer class="footer">
+    <div class="footer-bg">
+      <div class="footer-container container grid">
+        <div>
+          <h1 style="font-size:20px; "class="footer">Sanggraloka</h1>
+        </div>
+        
+        <div class="footer-socials">
+          <div class="col-md-6 text-end">
+            <a href="https://web.facebook.com/profile.php?id=100080900033167" class="text-decoration-none">
+              <img src="assets/sosialmedia/facebook.png" alt="Facebook" class="ms-2 logo" style="width: 15%; aspect-ratio: 3/2; object-fit: contain;">
+              <span class="social-name">Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/f_cathousebekasi/" class="text-decoration-none">
+              <img src="assets/sosialmedia/instagram.png" alt="Instagram" class="ms-2 logo" style="width: 15%; aspect-ratio: 3/2; object-fit: contain;">
+              <span class="social-name">Instagram</span>
+            </a>
+            <a href="https://wa.me/6288289250570" class="text-decoration-none">
+              <img src="assets/sosialmedia/whatsapp.png" alt="WhatsApp" class="ms-2 logo" style="width: 15%; aspect-ratio: 3/2; object-fit: contain;">
+              <span class="social-name">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copy">Coyright Sanggraloka - School of Tourism. All Right Servered</p>
+    </div>
+  </footer>
+</main>
+
+<a href="#home" class="scrollup" id="scroll-up">
+  <i class="fa-solid fa-arrow-up scroll-up-icon"></i>
+</a>
+<script src="Libraries/swiper-bundle.min.js"></script>
+<script
+  src="https://kit.fontawesome.com/9b634c15bd.js"
+  crossorigin="anonymous"
+></script>
+<script src="script.js"></script>
+
+  </body>
+</html>
