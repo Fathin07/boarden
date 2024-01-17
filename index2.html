@@ -6,7 +6,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./css/fatin.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" /> -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/slicknav.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -16,6 +18,43 @@
 </head>
 
 <body>
+  <header>
+    <div class="header-area">
+      <div class="main-header ">
+        <div class="header-bottom  header-sticky">
+          <div class="container">
+            <div class="row align-items-center">
+
+              <div class="col-xl-2 col-lg-2">
+                <div class="logo">
+                  <a href="#"><img src="Assets/logo1.png" class="img img-fluid" style="width: 50px;" alt="logo"></a>
+                </div>
+              </div>
+              <div class="col-xl-10 col-lg-10">
+                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+
+                  <div class="main-menu d-none d-lg-block">
+                    <nav>
+                      <ul id="navigation">
+                        <li class="blue-bg"><a href="#home"><span>Beranda</span></a></li>
+                        <li class="blue-bg"><a href="#kampus"><span>Kampus Kami</span></a></li>
+                        <li class="blue-bg"><a href="#about"><span>Tentang Kami</span></a></li>
+                        <li class="blue-bg"><a href="register2.html"><span>Pendaftaran</span></a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
   <div class="container">
     <div class="row" style="height: 750px;">
       <div class="parent-div">
@@ -43,42 +82,16 @@
               <i class="fa-solid fa-xmark nav-close" id="nav-close"></i>
             </div>
           </div>
-          <div class="main-header">
-            <div class="container">
-              <div class="row d-block">
-                <div class="col-12">
-                  <div class="col-xl-2 col-lg-2">
-                    <div class="logo">
-                      LOGO
-                      <!-- <img src="Assets/logo1.png" class="ms-2 img-responsive"/> -->
-                    </div>
-                  </div>
-                  <div class="col-xl-10 col-lg-10">
-                    Menu
-                    <!-- <div class="menu-wrapper d-flex align-items-center justifi-content-end">
-                      <div class="main-menu d-none d-lg-block">
-                        <nav>
-                          <ul id="navigation">
-                            <li>Home</li>
-                            <li>register</li>
-                          </ul>
-                        </nav>
-                      </div>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
-        <div class="node-4627" id="id-4627">
+        <div class="text-logo-web">
           <span class="node-4627-0">SANGGRALOKA IHCS</span>
         </div>
-        <div class="node-4641" id="id-4641">
-          <span class="node-4641-0">Sanggraloka - International Hotel and Cruise Ship Schools</span>
+        <div class="slide-text-1">
+          <span class="slide-text-1-s">Sanggraloka - International Hotel and Cruise Ship Schools</span>
         </div>
-        <div class="node-4643" id="id-4643">
-          <span class="node-4643-0">Sanggraloka - Sekolah hotel Dan Kapal Pesiar</span>
+        <div class="slide-text-2">
+          <span class="slide-text-2-s">Sanggraloka - Sekolah hotel Dan Kapal Pesiar</span>
         </div>
         <div class="node-4839" id="id-4839">
           <a href="register2.html" type="button" class="btn btn-primary p-2"
@@ -88,69 +101,73 @@
       </div>
     </div>
   </div>
-  </div>
   <section class="kampus section" id="kampus">
     <div class="row d-block" style="margin-top: 80px;">
-      <h2 class="text-center kampus-kam m-5">Kampus Kami</h2>
+      <h2 class="text-center kampus-kam">Kampus Kami</h2>
     </div>
     <div class="container">
       <div class="box-desc">
         <div class="row">
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person1.png" class="img-fluid">
+            </div>
             <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person2.png" class="img-fluid">
+            </div>
             <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person2.png" class="img-fluid">
+            </div>
             <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person1.png" class="img-fluid">
+            </div>
             <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person1.png" class="img-fluid">
+            </div>
             <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person2.png" class="img-fluid">
+            </div>
             <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person1.png" class="img-fluid">
+            </div>
             <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
-            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
-          </div>
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
-            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
-          </div>
-          <div class="col-sm">
-            <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person2.png" class="img-fluid">
+            </div>
             <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
   <div class="container-fluid">
     <section class="about section" id="about">
       <div class="row mt-5" style="min-height: 300px;background-image: linear-gradient(#131A56, #141B61C9);">
         <h2 class="text-center kampus-kam-2 mt-5 w-100" style="color: #fff;">Tentang Kami</h2>
-        <div class="col-3 my-auto">
-          <h2 class="text-center" style="color:#fff">Mengapa Harus Sanggraloka</h2>
+        <div class="col-12 col-lg-3 my-auto">
+          <h2 class="text-center" style="color:#fff;font-size: 24px;">Mengapa Harus Sanggraloka</h2>
         </div>
-        <div class="col-9">
+        <div class="col-12 col-lg-9">
           <ul style="color: #fff;">
             <li>Pengajaran bahasa Inggris dipercayakan kepada Language Centre Kampung Inggris cabang Bogor.
               Merupakan lembaga bahasa yang menitikberatkan pada percakapan (conversation) dan keberanian untuk
@@ -177,7 +194,7 @@
         </div>
         <div class="col-12" style="margin-bottom: 10px;">
           <div class="row m-3 p-3" style="background-color: #D9D9D9;">
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
               <ul>
                 <li>Bulan belajar Bahasa Inggris dengan Kampung Inggris LC Bogor</li>
                 <li>Bulan belajar Praktek Hospitality: (Housekeeping dan F&B) 30% Teori, 70% Praktek</li>
@@ -189,7 +206,7 @@
                   pesiar</li>
               </ul>
             </div>
-            <div class="col-6 my-auto text-center">
+            <div class="col-12 col-lg-6 my-auto text-center">
               <h1 style="-webkit-text-stroke-width: medium;">Program 1 Tahun</h1>
             </div>
           </div>
@@ -202,80 +219,86 @@
       <h2 class="text-center kampus-kam m-5">Pengelola</h2>
     </div>
     <div class="box-desc">
-      <div class="row">
-        <div class="col-sm">
-          <div style="background-color: gray;height:250px;border: solid 1px gray;">
-            <img style="height:260px;" src="Assets/person1.png">
+        <div class="row">
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person1.png" class="img-fluid">
+            </div>
+            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
-          <div class="text-center p-3"> Chandra Ghazali - Direktur Utama</div>
-        </div>
-        <div class="col-sm">
-          <div style="background-color: gray;height:250px;border: solid 1px gray;">
-            <img style="height:260px;" src="Assets/person2.png">
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person2.png" class="img-fluid">
+            </div>
+            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
           </div>
-          <div class="text-center p-3">Yenny Chandra - Direktur Keuangan</div>
-        </div>
-        <div class="col-sm">
-          <div style="background-color: gray;height:250px;border: solid 1px gray;"></div>
-          <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
-        </div>
-        <div class="col-sm">
-          <div style="background-color: gray;height:250px;border: solid 1px gray;"></div>
-          <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
-        </div>
-        <div class="col-sm">
-          <div style="background-color: gray;height:250px;border: solid 1px gray;"></div>
-          <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person2.png" class="img-fluid">
+            </div>
+            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
+          </div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person1.png" class="img-fluid">
+            </div>
+            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
+          </div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person1.png" class="img-fluid">
+            </div>
+            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
+          </div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person2.png" class="img-fluid">
+            </div>
+            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
+          </div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person1.png" class="img-fluid">
+            </div>
+            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
+          </div>
+          <div class="col-6 col-lg-3 mt-4">
+            <div style="background-color: gray;border: solid 1px gray;">
+              <img src="Assets/person2.png" class="img-fluid">
+            </div>
+            <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
+          </div>
         </div>
       </div>
-      <div class="row mt-3">
-        <div class="col-sm">
-          <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
-          <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
-        </div>
-        <div class="col-sm">
-          <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
-          <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
-        </div>
-        <div class="col-sm">
-          <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
-          <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
-        </div>
-        <div class="col-sm">
-          <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
-          <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
-        </div>
-        <div class="col-sm">
-          <div style="background-color: gray;height:150px;border: solid 1px gray;"></div>
-          <div style="border: solid 1px gray;" class="text-center p-3">Description</div>
-        </div>
-      </div>
-    </div>
   </div>
   <div class="container-fluid">
     <div class="row mt-5" style="min-height: 200px;background-image: linear-gradient(#131A56, #141B61C9);">
-      <div class="col-3 my-auto">
+      <div class="col-12 col-lg-3 mb-3 my-auto">
         <h2 class="text-center" style="color:#fff">Sanggraloka</h2>
       </div>
-      <div class="col 3 my-auto">
-        <div class="row" style="margin-bottom: 15px;">
-          <a style="position: absolute;" href="https://wa.me/087777787007" class="text-decoration-none">
-            <img src="Assets/sosialmedia/whatsapp5.png" class="ms-2" style="width: 32px;">
-          </a>
-          <h2 class="text-left my-auto" style="color:#fff; font-size:20px; margin-left:40px;">087777787007</h2>
+      <div class="col-12 col-lg-3 my-auto">
+        <div class="row d-flex justify-content-center">
+          <div class="d-flex">
+            <a href="https://wa.me/087777787007" class="text-decoration-none">
+              <img src="Assets/sosialmedia/whatsapp5.png" class="ms-2"  style="width: 32px;">
+            </a>
+            <div class="text-left ml-3" style="color:#fff; font-size:20px;">087777787007</div>
+          </div>
         </div>
-        <div class="row">
-          <a style="position: absolute;" href="https://www.instagram.com/sanggralokaihcs/" class="text-decoration-none">
-            <img src="Assets/sosialmedia/instagram.png" class="ms-2" style="width: 32px;">
-          </a>
-          <h2 class="text-left my-auto" style="color:#fff; font-size:20px; margin-left:40px;">sanggralokaihcs</h2>
+        <div class="d-flex justify-content-center">
+          <div class="d-flex">
+            <a href="https://www.instagram.com/sanggralokaihcs/" class="text-decoration-none">
+              <img src="Assets/sosialmedia/instagram.png" class="ms-2"  style="width: 32px;">
+            </a>
+            <h2 class="text-left ml-3" style="color:#fff; font-size:20px;">sanggralokaihcs</h2>
+          </div>
         </div>
       </div>
-      <div class="col 3 my-auto">
-        <h2 class="text-left" style="color:#fff; font-size:20px;">Jl. Gadog II, Jl. Raya Cipanas Puncak No.09, Gadog,
+      <div class="col-12 col-lg-3 my-auto">
+        <h2 class="text-center" style="color:#fff; font-size:20px;">Jl. Gadog II, Jl. Raya Cipanas Puncak No.09, Gadog,
           Pacet, Kabupaten Cianjur, Jawa Barat 43253</h2>
       </div>
-      <div class="col 3 my-auto">
+      <div class="col-12 col-lg-3 my-auto">
         <h2 class="text-center" style="color:#fff">Maps</h2>
       </div>
     </div>
@@ -290,8 +313,11 @@
       </div>
     </div>
   </div>
-  <script src="scripts.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <!-- <script src="scripts.js"></script> -->
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/jquery.slicknav.min.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
