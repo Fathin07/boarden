@@ -1,145 +1,441 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="Libraries/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="Css/style.css" />
-
-    <title>SANGGRALOKA IHCS</title>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pendaftaran Online — Sanggraloka IHCS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1E33;
+  --navy-mid:#12294A;
+  --navy-light:#1A3A5C;
+  --gold:#C9A84C;
+  --gold-light:#E2C97E;
+  --gold-pale:#F5EDD0;
+  --cream:#FAF8F3;
+  --white:#FFFFFF;
+  --text-dark:#0B1E33;
+  --text-body:#2C3E50;
+  --text-muted:#7A8A99;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'Outfit',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--cream);color:var(--text-dark);min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:.9rem 3rem;background:rgba(11,30,51,.96);
+  backdrop-filter:blur(20px);
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(201,168,76,.2);
+}
+.nav-logo{display:flex;align-items:center;gap:.875rem;text-decoration:none}
+.nav-logo-icon{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.95rem;font-weight:600;color:var(--navy)}
+.nav-logo-text{line-height:1.1}
+.nav-logo-name{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--white)}
+.nav-logo-sub{font-size:.6rem;color:rgba(255,255,255,.4);letter-spacing:.12em;text-transform:uppercase}
+.nav-back{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:rgba(255,255,255,.6);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transition:color .3s}
+.nav-back:hover{color:var(--gold-light)}
+.nav-back::before{content:'←';font-size:.9rem}
+
+/* ── PAGE LAYOUT ── */
+.page-wrap{
+  min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
+  padding-top:64px;
+}
+
+/* LEFT PANEL */
+.left-panel{
+  background:var(--navy);position:sticky;top:64px;height:calc(100vh - 64px);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:4rem;overflow:hidden;
+}
+.left-panel::before{
+  content:'';position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(45deg,rgba(201,168,76,.025) 0,rgba(201,168,76,.025) 1px,transparent 1px,transparent 70px),
+    radial-gradient(ellipse at 80% 20%,rgba(201,168,76,.08) 0%,transparent 60%);
+}
+.lp-content{position:relative;z-index:1}
+.lp-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);
+  padding:.4rem 1rem;border-radius:2px;
+  font-size:.68rem;font-weight:500;color:var(--gold-light);
+  letter-spacing:.18em;text-transform:uppercase;margin-bottom:2rem;
+}
+.lp-title{
+  font-family:var(--font-display);
+  font-size:clamp(2.5rem,4vw,3.75rem);
+  font-weight:300;color:var(--white);line-height:1.1;
+  letter-spacing:-.01em;margin-bottom:1.5rem;
+}
+.lp-title em{font-style:italic;color:var(--gold-light)}
+.lp-divider{width:50px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:1.5rem}
+.lp-desc{
+  font-size:.95rem;font-weight:300;color:rgba(255,255,255,.55);
+  line-height:1.8;max-width:380px;margin-bottom:3rem;
+}
+.lp-perks{display:flex;flex-direction:column;gap:.875rem}
+.lp-perk{
+  display:flex;align-items:flex-start;gap:.875rem;
+  padding:1rem 1.125rem;
+  background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.1);border-radius:3px;
+  transition:border-color .3s;
+}
+.lp-perk:hover{border-color:rgba(201,168,76,.25)}
+.lp-perk-icon{font-size:1.1rem;flex-shrink:0;margin-top:.05rem}
+.lp-perk-text{font-size:.83rem;color:rgba(255,255,255,.65);line-height:1.55;font-weight:300}
+.lp-perk-text strong{color:rgba(255,255,255,.9);font-weight:500}
+.lp-contact{
+  margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,.12);
+  display:flex;gap:1.5rem;
+}
+.lp-contact-item{display:flex;align-items:center;gap:.5rem}
+.lp-contact-item span{font-size:.75rem;color:rgba(255,255,255,.4)}
+.lp-contact-item a{font-size:.8rem;color:var(--gold-light);text-decoration:none}
+
+/* RIGHT PANEL — FORM */
+.right-panel{background:var(--cream);padding:4rem 3.5rem;overflow-y:auto}
+.form-header{margin-bottom:3rem}
+.form-step-label{
+  font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:.5rem;
+}
+.form-title{
+  font-family:var(--font-display);font-size:2.25rem;font-weight:300;
+  color:var(--navy);line-height:1.2;margin-bottom:.75rem;
+}
+.form-subtitle{font-size:.9rem;color:var(--text-muted);font-weight:300;line-height:1.65}
+.form-divider{width:40px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin:1.25rem 0 0}
+
+form{display:flex;flex-direction:column;gap:0}
+.form-group{margin-bottom:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:0}
+.form-row .form-group{margin-bottom:0}
+label{
+  display:block;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--navy);margin-bottom:.55rem;
+}
+label span.req{color:var(--gold);margin-left:.2rem}
+input,select,textarea{
+  width:100%;padding:.85rem 1.1rem;
+  background:var(--white);
+  border:1px solid rgba(11,30,51,.12);border-radius:3px;
+  font-family:var(--font-body);font-size:.9rem;font-weight:300;
+  color:var(--text-dark);outline:none;
+  transition:border-color .3s,box-shadow .3s;
+  appearance:none;-webkit-appearance:none;
+}
+input::placeholder,textarea::placeholder{color:var(--text-muted)}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(201,168,76,.12);
+}
+select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center;
+  padding-right:2.5rem;cursor:pointer;
+}
+textarea{resize:vertical;min-height:90px;line-height:1.6}
+.form-help{font-size:.75rem;color:var(--text-muted);margin-top:.4rem;font-weight:300}
+
+/* Radio group */
+.radio-group{display:flex;gap:.75rem;flex-wrap:wrap}
+.radio-option{
+  flex:1;min-width:100px;
+  border:1px solid rgba(11,30,51,.12);border-radius:3px;
+  padding:.75rem 1rem;cursor:pointer;
+  display:flex;align-items:center;gap:.6rem;
+  transition:all .3s;background:var(--white);
+}
+.radio-option:hover{border-color:rgba(201,168,76,.4)}
+.radio-option input[type="radio"]{
+  width:16px;height:16px;flex-shrink:0;padding:0;
+  accent-color:var(--gold);cursor:pointer;
+}
+.radio-option span{font-size:.85rem;color:var(--text-body);font-weight:300}
+.radio-option:has(input:checked){border-color:var(--gold);background:rgba(201,168,76,.05)}
+
+/* Source checkboxes */
+.checkbox-group{display:flex;flex-direction:column;gap:.6rem}
+.check-option{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.65rem .9rem;border:1px solid rgba(11,30,51,.1);border-radius:3px;
+  cursor:pointer;transition:all .3s;background:var(--white);
+}
+.check-option:hover{border-color:rgba(201,168,76,.35)}
+.check-option input[type="checkbox"]{
+  width:16px;height:16px;flex-shrink:0;padding:0;
+  accent-color:var(--gold);cursor:pointer;
+}
+.check-option span{font-size:.85rem;color:var(--text-body);font-weight:300}
+.check-option:has(input:checked){border-color:var(--gold);background:rgba(201,168,76,.05)}
+
+/* Section divider in form */
+.form-section-label{
+  font-size:.68rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);padding:.6rem 0;border-bottom:1px solid rgba(201,168,76,.2);
+  margin-bottom:1.5rem;margin-top:.5rem;display:block;
+}
+
+/* Submit */
+.form-submit{margin-top:2rem}
+.btn-submit{
+  width:100%;padding:1.1rem;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  color:var(--white);border:none;border-radius:3px;
+  font-family:var(--font-body);font-size:.85rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.btn-submit::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(201,168,76,.0),rgba(201,168,76,.15));
+  opacity:0;transition:opacity .3s;
+}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(11,30,51,.3)}
+.btn-submit:hover::after{opacity:1}
+.btn-submit:active{transform:none}
+.form-note{
+  text-align:center;margin-top:1rem;
+  font-size:.78rem;color:var(--text-muted);font-weight:300;line-height:1.6;
+}
+.form-note a{color:var(--gold);text-decoration:none}
+
+/* SUCCESS STATE */
+.success-overlay{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(11,30,51,.96);
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:1.5rem;text-align:center;padding:2rem;
+}
+.success-overlay.show{display:flex}
+.success-icon{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;
+  animation:popIn .5s cubic-bezier(.175,.885,.32,1.275) forwards;
+}
+@keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
+.success-title{font-family:var(--font-display);font-size:2.5rem;font-weight:300;color:var(--white)}
+.success-title em{font-style:italic;color:var(--gold-light)}
+.success-sub{font-size:.95rem;color:rgba(255,255,255,.55);font-weight:300;max-width:400px;line-height:1.7}
+.success-wa{
+  display:flex;align-items:center;gap:.75rem;
+  background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);
+  padding:1rem 2rem;border-radius:3px;text-decoration:none;
+  color:var(--gold-light);font-size:.88rem;letter-spacing:.06em;
+  transition:all .3s;margin-top:.5rem;
+}
+.success-wa:hover{background:rgba(201,168,76,.2)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:.9rem 1.5rem}
+  .page-wrap{grid-template-columns:1fr}
+  .left-panel{position:relative;top:0;height:auto;padding:3rem 2rem}
+  .right-panel{padding:2.5rem 1.5rem}
+}
 </style>
-    <!-- header  -->
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav-logo">SANGGRALOKA IHCS</a>
+</head>
+<body>
 
-        <div class="nav-menu" id="nav-menu">
-          <ul class="nav-list grid">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Beranda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Kampus Kami</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Tentang Kami</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="register.html">Pendaftaran</a>
-            </li>
-          </ul>
-          <i class="fa-solid fa-xmark nav-close" id="nav-close"></i>
-        </div>
-
-        <div class="nav-btns">
-          <!-- theme btn  -->
-          <i class="fa-regular fa-moon change-theme" id="theme-button"></i>
-
-          <div class="nav-toggle" id="nav-toggle">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
-      
-  <!-- register -->
-  
-  <div class="container">
-    <div class="box">
-      <p style="font-size: 2rem; font-weight: 850; text-align:center; ">Pendaftaran Online</p>
-      <p id='message'></p>
-      <div class="input-group"><input maxlength="25" type="text" placeholder="Nama Lengkap" name="username"onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))' required></div>
-      <div class="input-group"><input maxlength="25" type="email" required placeholder="Email" name="email"></div>
-      <div class="input-group"><input maxlength="25" type="text" required placeholder="No Handphone" name="nohp"></div>
-      <div class="input-group"><input maxlength="25" type="text" required placeholder="Jenis Kelamin" name="jeniskelamin"></div>
-      <div class="input-group"><input maxlength="25" type="text" required placeholder="Alamat" name="alamat"></div>
-      <div class="input-group"><input maxlength="25" type="number" required placeholder="Umur"  name="umur"></div>
-      <div class="input-group"><input maxlength="25" type="text" required placeholder="Pendidikan"  name="pendidikan"></div>
-      <div class="input-group"><button type="submit" id="submit" name="submit" class="btn-sbt">Register</button></div>
-    </form>
-    </form>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">S</div>
+    <div class="nav-logo-text">
+      <div class="nav-logo-name">Sanggraloka</div>
+      <div class="nav-logo-sub">IHCS</div>
     </div>
-  </div>
- 
+  </a>
+  <a href="index.html" class="nav-back">Kembali ke Beranda</a>
+</nav>
 
-  <script>
-    function submitForm(){
-      var isValid = true;
-      if (document.getElementById('password').value == document.getElementById('cpassword').value) {
-        isValid = true;
-      } else {
-        isValid = false;
-      }
+<div class="page-wrap">
 
-      if (!isValid) {
-          alert("Password tidak cocok");
-          return false;
-      }else{
-        return true;
-
-      }
-
-    }
-   
-    var check = function() {
-      if (document.getElementById('password').value ==
-        document.getElementById('cpassword').value) {
-        document.getElementById('message').style.color = 'green';
-        document.getElementById('message').innerHTML = 'Password cocok';
-      } else {
-        document.getElementById('message').style.color = 'red';
-        document.getElementById('message').innerHTML = 'Password tidak cocok';
-      }
-  }
-  </script>
-  <!-- register -->
-
-   <!-- footer  -->
-   <footer class="footer">
-    <div class="footer-bg">
-      <div class="footer-container container grid">
-        <div>
-          <h1 style="font-size:20px; "class="footer">Sanggraloka</h1>
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <div class="lp-content">
+      <span class="lp-badge">✦ Pendaftaran Online</span>
+      <h1 class="lp-title">Mulai<br/>Perjalanan<br/><em>Karirmu</em></h1>
+      <div class="lp-divider"></div>
+      <p class="lp-desc">Isi formulir pendaftaran ini dan tim kami akan menghubungi kamu dalam 1×24 jam untuk melanjutkan proses seleksi.</p>
+      <div class="lp-perks">
+        <div class="lp-perk">
+          <span class="lp-perk-icon">🎓</span>
+          <div class="lp-perk-text"><strong>Program 1 Tahun Intensif</strong> — English, Hospitality Skills, OJT Hotel Bintang 4-5, dan penyaluran ke kapal pesiar.</div>
         </div>
-        
-        <div class="footer-socials">
-          <div class="col-md-6 text-end">
-            <a href="https://web.facebook.com/profile.php?id=100080900033167" class="text-decoration-none">
-              <img src="assets/sosialmedia/facebook.png" alt="Facebook" class="ms-2 logo" style="width: 15%; aspect-ratio: 3/2; object-fit: contain;">
-              <span class="social-name">Facebook</span>
-            </a>
-            <a href="https://www.instagram.com/f_cathousebekasi/" class="text-decoration-none">
-              <img src="assets/sosialmedia/instagram.png" alt="Instagram" class="ms-2 logo" style="width: 15%; aspect-ratio: 3/2; object-fit: contain;">
-              <span class="social-name">Instagram</span>
-            </a>
-            <a href="https://wa.me/6288289250570" class="text-decoration-none">
-              <img src="assets/sosialmedia/whatsapp.png" alt="WhatsApp" class="ms-2 logo" style="width: 15%; aspect-ratio: 3/2; object-fit: contain;">
-              <span class="social-name">WhatsApp</span>
-            </a>
-          </div>
+        <div class="lp-perk">
+          <span class="lp-perk-icon">💳</span>
+          <div class="lp-perk-text"><strong>Cicilan Fleksibel</strong> — Biaya pendidikan bisa dicicil hingga 12 kali. Tidak ada alasan untuk menunda impianmu.</div>
+        </div>
+        <div class="lp-perk">
+          <span class="lp-perk-icon">🏠</span>
+          <div class="lp-perk-text"><strong>Asrama Tersedia</strong> — Untuk kamu yang berasal dari luar kota, asrama nyaman sudah tersedia di lokasi kampus.</div>
+        </div>
+        <div class="lp-perk">
+          <span class="lp-perk-icon">🚢</span>
+          <div class="lp-perk-text"><strong>Jaminan Penyaluran</strong> — Lulusan dibantu langsung disalurkan ke agensi kapal pesiar internasional terpercaya.</div>
         </div>
       </div>
-      <p class="footer-copy">Coyright Sanggraloka - School of Tourism. All Right Servered</p>
+      <div class="lp-contact">
+        <div class="lp-contact-item">
+          <span>📱</span>
+          <a href="https://wa.me/6287777787007">087777787007</a>
+        </div>
+        <div class="lp-contact-item">
+          <span>📸</span>
+          <a href="https://www.instagram.com/sanggralokaihcs/" target="_blank">@sanggralokaihcs</a>
+        </div>
+      </div>
     </div>
-  </footer>
-</main>
+  </div>
 
-<a href="#home" class="scrollup" id="scroll-up">
-  <i class="fa-solid fa-arrow-up scroll-up-icon"></i>
-</a>
-<script src="Libraries/swiper-bundle.min.js"></script>
-<script
-  src="https://kit.fontawesome.com/9b634c15bd.js"
-  crossorigin="anonymous"
-></script>
-<script src="script.js"></script>
+  <!-- RIGHT PANEL — FORM -->
+  <div class="right-panel">
+    <div class="form-header">
+      <span class="form-step-label">✦ Formulir Pendaftaran</span>
+      <h2 class="form-title">Data Diri<br/>Pendaftar</h2>
+      <p class="form-subtitle">Lengkapi data di bawah ini dengan benar. Semua informasi akan dijaga kerahasiaannya.</p>
+      <div class="form-divider"></div>
+    </div>
 
-  </body>
+    <form id="regForm" onsubmit="handleSubmit(event)">
+
+      <span class="form-section-label">Informasi Pribadi</span>
+
+      <div class="form-group">
+        <label>Nama Lengkap <span class="req">*</span></label>
+        <input type="text" name="nama" placeholder="Masukkan nama lengkap sesuai KTP" required/>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="contoh@gmail.com" required/>
+        </div>
+        <div class="form-group">
+          <label>No. WhatsApp <span class="req">*</span></label>
+          <input type="tel" name="telepon" placeholder="08xxxxxxxxxx" required/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Umur <span class="req">*</span></label>
+          <input type="number" name="umur" placeholder="Contoh: 20" min="15" max="40" required/>
+        </div>
+        <div class="form-group">
+          <label>Jenis Kelamin <span class="req">*</span></label>
+          <select name="gender" required>
+            <option value="" disabled selected>Pilih jenis kelamin</option>
+            <option>Laki-laki</option>
+            <option>Perempuan</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Alamat Lengkap <span class="req">*</span></label>
+        <textarea name="alamat" placeholder="Jalan, Kelurahan, Kecamatan, Kota, Provinsi" required></textarea>
+      </div>
+
+      <span class="form-section-label">Latar Belakang Pendidikan</span>
+
+      <div class="form-group">
+        <label>Pendidikan Terakhir <span class="req">*</span></label>
+        <select name="pendidikan" required>
+          <option value="" disabled selected>Pilih pendidikan terakhir</option>
+          <option>SMP / Sederajat</option>
+          <option>SMA / SMK / Sederajat</option>
+          <option>Diploma (D1/D2/D3)</option>
+          <option>Sarjana (S1)</option>
+          <option>Pascasarjana (S2/S3)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Nama Sekolah / Universitas</label>
+        <input type="text" name="sekolah" placeholder="Nama institusi pendidikan terakhir"/>
+      </div>
+
+      <span class="form-section-label">Informasi Tambahan</span>
+
+      <div class="form-group">
+        <label>Darimana Kamu Mengetahui Sanggraloka? <span class="req">*</span></label>
+        <div class="checkbox-group">
+          <label class="check-option">
+            <input type="checkbox" name="sumber" value="Social Media"/>
+            <span>📱 Social Media (Instagram, TikTok, dll.)</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="sumber" value="Tim Sanggraloka"/>
+            <span>👥 Rekomendasi Tim Sanggraloka</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="sumber" value="Browsing Internet"/>
+            <span>🔍 Browsing / Google / Internet</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="sumber" value="Tim Marketing"/>
+            <span>🎯 Tim Marketing Sanggraloka</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" name="sumber" value="Teman/Keluarga"/>
+            <span>❤️ Rekomendasi Teman / Keluarga</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Pertanyaan atau Pesan</label>
+        <textarea name="pesan" placeholder="Ada yang ingin kamu tanyakan? Tulis di sini..." style="min-height:100px"></textarea>
+        <div class="form-help">Opsional — tim kami akan menjawab semua pertanyaanmu.</div>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-submit">Kirim Pendaftaran Sekarang ✦</button>
+        <p class="form-note">Dengan mendaftar, kamu setuju dengan <a href="#">Kebijakan Privasi</a> kami.<br/>Tim akan menghubungimu dalam <strong>1×24 jam</strong> via WhatsApp.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-icon">✓</div>
+  <h2 class="success-title">Pendaftaran<br/><em>Berhasil!</em></h2>
+  <p class="success-sub">Terima kasih telah mendaftar di Sanggraloka IHCS. Tim kami akan menghubungi kamu dalam 1×24 jam via WhatsApp untuk langkah selanjutnya.</p>
+  <a class="success-wa" href="https://wa.me/6287777787007?text=Halo%20Sanggraloka%2C%20saya%20baru%20saja%20mendaftar%20melalui%20website%20dan%20ingin%20mengetahui%20informasi%20lebih%20lanjut." target="_blank">
+    📱 Chat Langsung via WhatsApp
+  </a>
+  <a href="index.html" style="font-size:.8rem;color:rgba(255,255,255,.35);text-decoration:none;margin-top:.5rem;letter-spacing:.06em">← Kembali ke Beranda</a>
+</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.btn-submit');
+  btn.textContent = 'Mengirim...';
+  btn.disabled = true;
+  // Simulate send
+  setTimeout(() => {
+    document.getElementById('successOverlay').classList.add('show');
+  }, 1200);
+}
+</script>
+</body>
 </html>
